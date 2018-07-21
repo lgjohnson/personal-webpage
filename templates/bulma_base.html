@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        {{ moment.include_jquery() }}
+        {{ moment.include_moment() }}
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{% block title %}
+        <title>Hello Bulma!</title>
+		{% endblock %}
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css"/>
+		<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	</head>
+	<body>
+		<section class="hero is-danger is-large">
+
+            {% for message in get_flashed_messages() %}
+                <div class="notification is-primary">
+                    <button class="delete"></button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+
+            <div class="hero-head">
+                <nav class="navbar is-transparent" style="background:#FC3C63;">
+                  <div class="navbar-brand">
+                    <a class="navbar-item" href="https://bulma.io">
+                      <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+                    </a>
+                  </div>
+
+                  <div class="navbar-menu is-active">
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item" href="/portfolio">
+                            Portfolio
+                        </a>
+                        <a class="navbar-item" href="/blog">
+                            Blog
+                        </a>
+                        <a class="navbar-item" href="/contactme">
+                            Contact Me
+                        </a>
+                    </div>
+
+                    <div class="navbar-end">
+                    </div>
+                  </div>
+                </nav>
+            </div>
+
+		  <div class="hero-body">
+              {% block body %}
+              {% endblock %}
+		  </div>
+
+
+
+
+
+		  <div class="hero-foot">
+  			<a href="https://bulma.io">
+				<img src="https://bulma.io/images/made-with-bulma--semiwhite.png" alt="Made with Bulma" width="128" height="24">
+			</a>
+			<br>
+			<a href="http://flask.pocoo.org/" style="margin:8px"><img
+					src="http://flask.pocoo.org/static/badges/powered-by-flask-s.png"
+					border="0"
+					alt="made with Flask"
+					title="made with Flask">
+			</a>
+		  </div>
+		</section>
+	</body>
+</html>

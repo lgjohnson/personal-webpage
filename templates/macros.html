@@ -1,0 +1,72 @@
+{% macro render_blog(blog_entries) %}
+    <ul>
+    {% for entry in blog_entries %}
+        <li><strong>{{ entry['date'] }}</strong>: {{ entry['text']|safe }}</li>
+    {% endfor %}
+    </ul>
+{% endmacro %}
+
+{% macro create_contact_form(form) %}
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="field is-horizontal">
+            <div class="field-label">
+                <label class="label">{{ form.name.label }}</label>
+            </div>
+            <div class="field-body">
+                <div class="control has-icons-left">
+                    {{ form.name(class="input", type="text", placeholder="e.g. Max Power") }}
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">{{ form.company.label }}</label>
+            <div class="control has-icons-left">
+                {{ form.company(class="input", type="text", placeholder="e.g. Springfield Nuclear Power Plant") }}
+                <span class="icon is-small is-left">
+                    <i class="fas fa-building"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">{{ form.position.label }}</label>
+            <div class="control has-icons-left">
+                {{ form.position(class="input", type="text", placeholder="e.g. Nuclear Safety Inspector") }}
+                <span class="icon is-small is-left">
+                    <i class="fas fa-briefcase"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">{{ form.email.label }}</label>
+            <div class="control has-icons-left">
+                {{ form.email(class="input", type="email", placeholder="e.g. maxpower@earthlink.net") }}
+                <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">{{ form.content.label }}</label>
+            <div class="control has-icons-left">
+                {{ form.content(class="textarea", type="text", placeholder="      What's on your mind?") }}
+                <span class="icon is-small is-left">
+                    <i class="fas fa-pencil-alt"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="field is-grouped is-centered">
+            <div class="control">
+                {{ form.submit(class="button is-primary") }}
+            </div>
+        </div>
+    </form>
+{% endmacro %}

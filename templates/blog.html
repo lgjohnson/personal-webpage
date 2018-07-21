@@ -1,0 +1,18 @@
+{% extends 'bulma_base.html' %}
+{% import 'macros.html' as macros %}
+
+{% block title %}<title>Greg's Blog</title>{% endblock %}
+
+{% block body %}
+    <div class="container has-text-centered">
+        <p class="title">
+            Data Science Blog
+        </p>
+        <p class="subtitle">
+            Learning to prepare for our robot overlords.
+        </p>
+        {% if blog_entries %}
+            {{ macros.render_blog(blog_entries) }}
+        {% endif %}
+    </div>
+{% endblock %}

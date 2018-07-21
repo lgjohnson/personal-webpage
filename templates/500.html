@@ -1,0 +1,16 @@
+{% extends 'bulma_base.html' %}
+{% import 'macros.html' as macros %}
+
+{% block title %}<title>Greg's Blog</title>{% endblock %}
+
+{% block body %}
+    <div class="container has-text-centered">
+        <h1 class="title">
+            Internal Server Error!
+        </h1>
+        <p class="subtitle">
+            Consider our web dev fired.
+        </p>
+        <img src="{{ url_for('static', filename='img/errordoge.png') }}">
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'bulma_base.html' %}
+{% import 'macros.html' as macros %}
+
+{% block title %}<title>Greg's Homepage</title>{% endblock %}
+
+{% block body %}
+    <div class="container has-text-centered">
+        <p class="title">
+            Greg Johnson
+        </p>
+        <p class="subtitle">
+            Statistician and Data Scientist
+        </p>
+        <br>
+        <p>The time is {{ moment(current_time).format('LLL') }}</p>
+        <p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+    </div>
+{% endblock %}

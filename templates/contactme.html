@@ -1,0 +1,18 @@
+{% extends 'bulma_base.html' %}
+{% import 'macros.html' as macros %}
+
+{% block title %}<title>Greg's Homepage</title>{% endblock %}
+
+{% block body %}
+    <div class="container has-text-centered">
+        <p class="title">
+            Contact Me
+        </p>
+        <p class="subtitle">
+            Please, I crave human contact.
+        </p>
+    </div>
+    <div class="container">
+        {{ macros.create_contact_form(form) }}
+    </div>
+{% endblock %}
