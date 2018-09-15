@@ -6,3 +6,4 @@ venv
 .env
 __pycache__
 flask_env
+personal-webpage.code-workspace
