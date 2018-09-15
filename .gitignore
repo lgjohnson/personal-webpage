@@ -5,3 +5,4 @@ personalFlask
 venv
 .env
 __pycache__
+flask_env
